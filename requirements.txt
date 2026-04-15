@@ -1,8 +1,8 @@
-streamlit==1.31.0
+streamlit
 opencv-python-headless
-numpy==1.24.3
-Pillow==10.2.0
-ultralytics==8.1.0
-mediapipe==0.10.9
-pyttsx3==2.90
-requests==2.31.0
+numpy
+Pillow
+requests
+ultralytics
+mediapipe
+pyttsx3
