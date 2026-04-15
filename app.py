@@ -32,63 +32,34 @@ st.set_page_config(
 # Custom CSS for Dreamy Lavender Aesthetic
 st.markdown("""
 <style>
-    /* Main Background */
     .stApp {
         background: linear-gradient(135deg, #F3E5F5 0%, #E8EAF6 50%, #E0F7FA 100%);
         animation: gradientShift 15s ease infinite;
     }
-    
     @keyframes gradientShift {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
-    
-    /* --- READABILITY FIXES --- */
-    /* Force dark text ONLY in the main area so the dark sidebar doesn't break */
-    [data-testid="stMain"] h1, 
-    [data-testid="stMain"] h2, 
-    [data-testid="stMain"] h3 {
-        color: #6A1B9A !important; /* Deep Purple for Headers */
-    }
-    
-    [data-testid="stMain"] p, 
-    [data-testid="stMain"] li, 
-    [data-testid="stMain"] span, 
-    [data-testid="stMain"] label,
-    [data-testid="stMain"] div[class*="stMarkdown"] {
-        color: #37474F !important; /* Dark Slate Blue for normal text */
-    }
-    
-    /* Protect the main title's gradient glow from the rules above */
-    [data-testid="stMain"] .main-title {
-        -webkit-text-fill-color: transparent !important;
-    }
-    /* ------------------------- */
-
     .lavender-corner-top-left {
         position: fixed; top: 0; left: 0; font-size: 6rem; z-index: 100;
         pointer-events: none; opacity: 0.7; animation: gentleSway 6s ease-in-out infinite;
         transform-origin: top left;
     }
-    
     .lavender-corner-top-right {
         position: fixed; top: 0; right: 0; font-size: 6rem; z-index: 100;
         pointer-events: none; opacity: 0.7; animation: gentleSway 7s ease-in-out infinite alternate;
         transform-origin: top right;
     }
-    
     .floral-divider {
         text-align: center; letter-spacing: 15px; font-size: 1.5rem;
         color: #BA68C8; opacity: 0.8; margin: 10px 0;
     }
-    
     @keyframes gentleSway {
         0% { transform: rotate(-3deg); }
         50% { transform: rotate(3deg); }
         100% { transform: rotate(-3deg); }
     }
-    
     .main-title {
         font-size: 4rem;
         font-weight: 900;
@@ -101,7 +72,6 @@ st.markdown("""
         text-shadow: 3px 3px 6px rgba(156, 39, 176, 0.2);
         margin-bottom: 0.5rem;
     }
-    
     .quote-card {
         background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(10px);
@@ -115,26 +85,23 @@ st.markdown("""
         box-shadow: 0 8px 32px rgba(121, 134, 203, 0.15);
         animation: floatIn 1.5s ease;
     }
-    
     .quote-text {
         font-size: 1.25rem;
-        color: #5C6BC0 !important;
+        color: #5C6BC0;
         font-style: italic;
         font-weight: 500;
         line-height: 1.6;
     }
-    
     .quote-author {
         display: block;
         margin-top: 10px;
         font-size: 0.9rem;
-        color: #7986CB !important;
+        color: #7986CB;
         font-weight: 600;
     }
-    
     .stButton > button {
         background: linear-gradient(135deg, #CE93D8, #9FA8DA);
-        color: white !important;
+        color: white;
         border: none;
         border-radius: 30px;
         padding: 12px 30px;
@@ -143,20 +110,17 @@ st.markdown("""
         box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
         transition: all 0.3s ease;
     }
-    
     .stButton > button:hover {
         transform: translateY(-3px) scale(1.02);
         box-shadow: 0 8px 25px rgba(156, 39, 176, 0.4);
         background: linear-gradient(135deg, #BA68C8, #7986CB);
-        color: white !important;
+        color: white;
     }
-    
     .css-1d391kg {
         background: linear-gradient(180deg, rgba(243,229,245,0.9), rgba(224,247,250,0.9));
         backdrop-filter: blur(10px);
         border-right: 2px solid rgba(255,255,255,0.6);
     }
-    
     .metric-card {
         background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
@@ -166,13 +130,11 @@ st.markdown("""
         border: 1px solid rgba(255, 255, 255, 0.5);
         transition: all 0.3s ease;
     }
-    
     .metric-card:hover {
         transform: translateY(-5px);
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0 12px 40px rgba(121, 134, 203, 0.25);
     }
-    
     .stFileUploader {
         background: rgba(255,255,255,0.5);
         backdrop-filter: blur(5px);
