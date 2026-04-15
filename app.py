@@ -26,17 +26,17 @@ except:
 # Page Configuration
 st.set_page_config(
     page_title="✨ AI Vision Studio",
-    page_icon="🎨",
+    page_icon="🪻",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Cool Pastel Aesthetic Theme (Blues, Lavenders, Mint)
+# Custom CSS for Dreamy Lavender Aesthetic
 st.markdown("""
 <style>
-    /* Main Background with Gradient */
+    /* Main Background with Soft Gradient */
     .stApp {
-        background: linear-gradient(135deg, #E0F7FA 0%, #E8EAF6 50%, #F3E5F5 100%);
+        background: linear-gradient(135deg, #F3E5F5 0%, #E8EAF6 50%, #E0F7FA 100%);
         animation: gradientShift 15s ease infinite;
     }
     
@@ -46,193 +46,129 @@ st.markdown("""
         100% { background-position: 0% 50%; }
     }
     
+    /* Decorative Lavender Borders */
+    .lavender-corner-top-left {
+        position: fixed; top: 0; left: 0; font-size: 6rem; z-index: 100;
+        pointer-events: none; opacity: 0.7; animation: gentleSway 6s ease-in-out infinite;
+        transform-origin: top left;
+    }
+    .lavender-corner-top-right {
+        position: fixed; top: 0; right: 0; font-size: 6rem; z-index: 100;
+        pointer-events: none; opacity: 0.7; animation: gentleSway 7s ease-in-out infinite alternate;
+        transform-origin: top right;
+    }
+    .floral-divider {
+        text-align: center; letter-spacing: 15px; font-size: 1.5rem;
+        color: #BA68C8; opacity: 0.8; margin: 10px 0;
+    }
+    
+    @keyframes gentleSway {
+        0% { transform: rotate(-3deg); }
+        50% { transform: rotate(3deg); }
+        100% { transform: rotate(-3deg); }
+    }
+    
     /* Glowing Title Animation */
     .main-title {
-        font-size: 3.5rem;
-        font-weight: 800;
+        font-size: 4rem;
+        font-weight: 900;
         text-align: center;
-        background: linear-gradient(45deg, #7986CB, #BA68C8, #4FC3F7, #7986CB);
+        background: linear-gradient(45deg, #9C27B0, #7986CB, #4FC3F7, #BA68C8);
         background-size: 300% 300%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        animation: gradientAnimation 4s ease infinite;
-        text-shadow: 2px 2px 4px rgba(121, 134, 203, 0.3);
-        margin-bottom: 1rem;
+        animation: gradientAnimation 5s ease infinite;
+        text-shadow: 3px 3px 6px rgba(156, 39, 176, 0.2);
+        margin-bottom: 0.5rem;
     }
     
-    @keyframes gradientAnimation {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    
-    /* Subtitle */
-    .subtitle {
-        font-size: 1.3rem;
+    /* Glassmorphism Quote Card */
+    .quote-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        padding: 25px;
         text-align: center;
-        color: #5C6BC0;
-        font-weight: 600;
-        margin-bottom: 2rem;
-        animation: fadeInUp 1s ease;
+        margin: 0 auto 2rem auto;
+        max-width: 800px;
+        box-shadow: 0 8px 32px rgba(121, 134, 203, 0.15);
+        animation: floatIn 1.5s ease;
     }
     
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .quote-text {
+        font-size: 1.25rem;
+        color: #5C6BC0;
+        font-style: italic;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+    
+    .quote-author {
+        display: block;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #7986CB;
+        font-weight: 600;
     }
     
     /* Card Styling with Hover Effects */
     .stButton > button {
-        background: linear-gradient(135deg, #B3E5FC, #E1BEE7);
-        color: #37474F;
+        background: linear-gradient(135deg, #CE93D8, #9FA8DA);
+        color: white;
         border: none;
-        border-radius: 25px;
+        border-radius: 30px;
         padding: 12px 30px;
         font-weight: 600;
         font-size: 1.1rem;
-        box-shadow: 0 4px 15px rgba(129, 212, 250, 0.3);
+        box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
         transition: all 0.3s ease;
-        animation: pulse 2s infinite;
     }
     
     .stButton > button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(129, 212, 250, 0.5);
-        background: linear-gradient(135deg, #E1BEE7, #B3E5FC);
-        color: #37474F;
-    }
-    
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.02); }
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(156, 39, 176, 0.4);
+        background: linear-gradient(135deg, #BA68C8, #7986CB);
+        color: white;
     }
     
     /* Sidebar Styling */
     .css-1d391kg {
-        background: linear-gradient(180deg, #E0F7FA, #F3E5F5);
-        border-right: 3px solid #B2EBF2;
+        background: linear-gradient(180deg, rgba(243,229,245,0.9), rgba(224,247,250,0.9));
+        backdrop-filter: blur(10px);
+        border-right: 2px solid rgba(255,255,255,0.6);
     }
     
-    /* Info Box */
-    .stAlert {
-        background: rgba(255,255,255,0.9);
-        border-left: 5px solid #BA68C8;
-        border-radius: 15px;
-        animation: slideIn 0.5s ease;
-    }
-    
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateX(-50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    
-    /* Metric Cards */
+    /* Metric Cards (Glassmorphism) */
     .metric-card {
-        background: rgba(255,255,255,0.95);
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
         padding: 20px;
         border-radius: 20px;
-        box-shadow: 0 8px 25px rgba(121, 134, 203, 0.2);
-        border: 2px solid #C5CAE9;
+        box-shadow: 0 8px 32px rgba(121, 134, 203, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.5);
         transition: all 0.3s ease;
-        animation: floatIn 0.6s ease;
     }
     
     .metric-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 12px 35px rgba(121, 134, 203, 0.3);
-    }
-    
-    @keyframes floatIn {
-        from {
-            opacity: 0;
-            transform: scale(0.8);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-    
-    /* Select Box */
-    .stSelectbox {
-        animation: fadeIn 0.8s ease;
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 12px 40px rgba(121, 134, 203, 0.25);
     }
     
     /* File Uploader */
     .stFileUploader {
-        background: rgba(255,255,255,0.8);
+        background: rgba(255,255,255,0.5);
+        backdrop-filter: blur(5px);
         padding: 20px;
-        border-radius: 15px;
-        border: 2px dashed #90CAF9;
-        animation: borderPulse 2s infinite;
-    }
-    
-    @keyframes borderPulse {
-        0%, 100% { border-color: #90CAF9; }
-        50% { border-color: #CE93D8; }
-    }
-    
-    /* Spinner */
-    .stSpinner > div {
-        border-top-color: #7986CB !important;
-    }
-    
-    /* Success Message */
-    .success-box {
-        background: linear-gradient(135deg, #A5D6A7, #C8E6C9);
-        padding: 15px;
-        border-radius: 15px;
-        color: #1B5E20;
-        font-weight: 600;
-        text-align: center;
-        animation: bounceIn 0.6s ease;
-    }
-    
-    @keyframes bounceIn {
-        0% { transform: scale(0); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-    }
-    
-    /* Sparkle Effect */
-    .sparkle {
-        animation: sparkle 1.5s infinite;
-    }
-    
-    @keyframes sparkle {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
-    }
-    
-    /* Header decoration */
-    .header-decoration {
-        text-align: center;
-        font-size: 2rem;
-        animation: rotate 3s linear infinite;
-    }
-    
-    @keyframes rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+        border-radius: 20px;
+        border: 2px dashed #BA68C8;
     }
 </style>
+
+<div class="lavender-corner-top-left">🌿🪻</div>
+<div class="lavender-corner-top-right">🪻🌿</div>
 """, unsafe_allow_html=True)
 
 # Initialize TTS Engine
@@ -371,17 +307,23 @@ def process_video_chunks(video_path, model, model_type, chunk_size=30):
 
 # Main App
 def main():
-    # Animated Header
-    st.markdown('<div class="header-decoration">✨🎨✨</div>', unsafe_allow_html=True)
+    # Animated Header & Motivational Quote
+    st.markdown('<div class="floral-divider">🪻 ✧ 🌸 ✧ 🪻 ✧ 🌸 ✧ 🪻</div>', unsafe_allow_html=True)
     st.markdown('<h1 class="main-title">AI Vision Studio</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="subtitle">✨ Experience the Magic of Computer Vision ✨</p>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="quote-card">
+        <span class="quote-text">"The real magic of discovery lies not in seeking new landscapes, but in having new eyes."</span>
+        <span class="quote-author">— Marcel Proust</span>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Initialize TTS
     tts_engine = init_tts()
     
     # Sidebar
     with st.sidebar:
-        st.markdown("### 🎨 Control Panel")
+        st.markdown("### 🪻 Control Panel")
         st.markdown("---")
         
         # Model Selection
@@ -410,11 +352,10 @@ def main():
         st.markdown("---")
         st.markdown("### 🌟 Features")
         st.markdown("""
-        - ✅ Real-time Detection
-        - ✅ Video Processing
-        - ✅ Multiple Input Sources
-        - ✅ Text-to-Speech
-        - ✅ Beautiful UI
+        - 🪻 Real-time Detection
+        - 🪻 Video Processing
+        - 🪻 Multiple Input Sources
+        - 🪻 Text-to-Speech Audio
         """)
     
     # Load Models
@@ -422,13 +363,13 @@ def main():
     mp_models = {}
     
     if model_choice == 'YOLO Object Detection':
-        with st.spinner('🎨 Loading YOLO model...'):
+        with st.spinner('✨ Conjuring YOLO model...'):
             yolo_model = load_yolo_model()
             if not yolo_model:
                 st.error("❌ YOLO model not available. Please install ultralytics.")
                 return
     else:
-        with st.spinner('🎨 Loading MediaPipe models...'):
+        with st.spinner('✨ Conjuring MediaPipe models...'):
             mp_models = load_mediapipe_models()
             if not mp_models:
                 st.error("❌ MediaPipe not available. Please install mediapipe.")
@@ -612,7 +553,8 @@ def main():
     
     # Footer
     st.markdown("---")
-    st.markdown('<p style="text-align: center; color: #5C6BC0; font-weight: 600;">✨ Built with Love using Free AI Models ✨</p>',
+    st.markdown('<div class="floral-divider">🪻 ✧ 🌸 ✧ 🪻</div>', unsafe_allow_html=True)
+    st.markdown('<p style="text-align: center; color: #7986CB; font-weight: 600;">✨ Built with Magic & AI ✨</p>',
                unsafe_allow_html=True)
 
 if __name__ == "__main__":
