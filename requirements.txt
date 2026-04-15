@@ -5,4 +5,3 @@ Pillow
 requests
 ultralytics
 mediapipe
-pyttsx3
