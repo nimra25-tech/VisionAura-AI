@@ -31,12 +31,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for Pink + Beige Aesthetic Theme with Animations
+# Custom CSS for Cool Pastel Aesthetic Theme (Blues, Lavenders, Mint)
 st.markdown("""
 <style>
     /* Main Background with Gradient */
     .stApp {
-        background: linear-gradient(135deg, #FFE4E1 0%, #F5DEB3 50%, #FFB6C1 100%);
+        background: linear-gradient(135deg, #E0F7FA 0%, #E8EAF6 50%, #F3E5F5 100%);
         animation: gradientShift 15s ease infinite;
     }
     
@@ -51,12 +51,12 @@ st.markdown("""
         font-size: 3.5rem;
         font-weight: 800;
         text-align: center;
-        background: linear-gradient(45deg, #FF69B4, #FFB6C1, #DDA0DD, #FF69B4);
+        background: linear-gradient(45deg, #7986CB, #BA68C8, #4FC3F7, #7986CB);
         background-size: 300% 300%;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: gradientAnimation 4s ease infinite;
-        text-shadow: 2px 2px 4px rgba(255,182,193,0.3);
+        text-shadow: 2px 2px 4px rgba(121, 134, 203, 0.3);
         margin-bottom: 1rem;
     }
     
@@ -70,7 +70,7 @@ st.markdown("""
     .subtitle {
         font-size: 1.3rem;
         text-align: center;
-        color: #8B4789;
+        color: #5C6BC0;
         font-weight: 600;
         margin-bottom: 2rem;
         animation: fadeInUp 1s ease;
@@ -89,22 +89,23 @@ st.markdown("""
     
     /* Card Styling with Hover Effects */
     .stButton > button {
-        background: linear-gradient(135deg, #FFB6C1, #FF69B4);
-        color: white;
+        background: linear-gradient(135deg, #B3E5FC, #E1BEE7);
+        color: #37474F;
         border: none;
         border-radius: 25px;
         padding: 12px 30px;
         font-weight: 600;
         font-size: 1.1rem;
-        box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+        box-shadow: 0 4px 15px rgba(129, 212, 250, 0.3);
         transition: all 0.3s ease;
         animation: pulse 2s infinite;
     }
     
     .stButton > button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(255,105,180,0.5);
-        background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+        box-shadow: 0 6px 20px rgba(129, 212, 250, 0.5);
+        background: linear-gradient(135deg, #E1BEE7, #B3E5FC);
+        color: #37474F;
     }
     
     @keyframes pulse {
@@ -114,14 +115,14 @@ st.markdown("""
     
     /* Sidebar Styling */
     .css-1d391kg {
-        background: linear-gradient(180deg, #FFE4E1, #F5DEB3);
-        border-right: 3px solid #FFB6C1;
+        background: linear-gradient(180deg, #E0F7FA, #F3E5F5);
+        border-right: 3px solid #B2EBF2;
     }
     
     /* Info Box */
     .stAlert {
         background: rgba(255,255,255,0.9);
-        border-left: 5px solid #FF69B4;
+        border-left: 5px solid #BA68C8;
         border-radius: 15px;
         animation: slideIn 0.5s ease;
     }
@@ -142,15 +143,15 @@ st.markdown("""
         background: rgba(255,255,255,0.95);
         padding: 20px;
         border-radius: 20px;
-        box-shadow: 0 8px 25px rgba(255,105,180,0.2);
-        border: 2px solid #FFB6C1;
+        box-shadow: 0 8px 25px rgba(121, 134, 203, 0.2);
+        border: 2px solid #C5CAE9;
         transition: all 0.3s ease;
         animation: floatIn 0.6s ease;
     }
     
     .metric-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 12px 35px rgba(255,105,180,0.3);
+        box-shadow: 0 12px 35px rgba(121, 134, 203, 0.3);
     }
     
     @keyframes floatIn {
@@ -179,26 +180,26 @@ st.markdown("""
         background: rgba(255,255,255,0.8);
         padding: 20px;
         border-radius: 15px;
-        border: 2px dashed #FFB6C1;
+        border: 2px dashed #90CAF9;
         animation: borderPulse 2s infinite;
     }
     
     @keyframes borderPulse {
-        0%, 100% { border-color: #FFB6C1; }
-        50% { border-color: #FF69B4; }
+        0%, 100% { border-color: #90CAF9; }
+        50% { border-color: #CE93D8; }
     }
     
     /* Spinner */
     .stSpinner > div {
-        border-top-color: #FF69B4 !important;
+        border-top-color: #7986CB !important;
     }
     
     /* Success Message */
     .success-box {
-        background: linear-gradient(135deg, #98FB98, #90EE90);
+        background: linear-gradient(135deg, #A5D6A7, #C8E6C9);
         padding: 15px;
         border-radius: 15px;
-        color: #006400;
+        color: #1B5E20;
         font-weight: 600;
         text-align: center;
         animation: bounceIn 0.6s ease;
@@ -611,7 +612,7 @@ def main():
     
     # Footer
     st.markdown("---")
-    st.markdown('<p style="text-align: center; color: #8B4789; font-weight: 600;">✨ Built with Love using Free AI Models ✨</p>',
+    st.markdown('<p style="text-align: center; color: #5C6BC0; font-weight: 600;">✨ Built with Love using Free AI Models ✨</p>',
                unsafe_allow_html=True)
 
 if __name__ == "__main__":
