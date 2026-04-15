@@ -1,16 +1,3 @@
-import subprocess
-import sys
-
-# --- THE ULTIMATE BYPASS ---
-# YOLO sneaks in the GUI version of OpenCV, which crashes Streamlit Cloud.
-# This forcefully uninstalls the broken GUI version right as the app boots, 
-# forcing Python to use the 'headless' version we installed.
-try:
-    subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "opencv-python"], check=True, stdout=subprocess.DEVNULL)
-except:
-    pass
-# ---------------------------
-
 import streamlit as st
 import cv2
 import numpy as np
